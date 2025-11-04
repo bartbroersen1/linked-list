@@ -1,0 +1,9 @@
+{}
+//format all files: "npx prettier . --write"
+//format selected files: "npx prettier --write dir/file/*"
+//check if everyone runs prettier: "npx prettier . --check"
+
+//info about options: "https://prettier.io/docs/configuration"
+
+//check prettier before commits with Git hooks: "https://prettier.io/docs/install.html"
+

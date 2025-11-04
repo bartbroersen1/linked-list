@@ -1,0 +1,50 @@
+{
+  "name": "restaurant-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "inst webpack": "install --save-dev webpack webpack-cli",
+    "inst html": "install --save-dev html-webpack-plugin",
+    "inst css": "install --save-dev style-loader css-loader",
+    "inst html-img": "install --save-dev html-loader",
+    "inst dev-server": "install --save-dev webpack-dev-server",
+    "inst eslint": "install --save-dev eslint@latest @eslint/js@latest",
+    "inst prettier": "install --save-dev --save-exact prettier",
+    "inst eslint-config-prettier": "i -D eslint-config-prettier",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bartbroersen1/restaurant-page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bartbroersen1/restaurant-page/issues"
+  },
+  "homepage": "https://github.com/bartbroersen1/restaurant-page#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.37.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.4.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.4",
+    "prettier": "^3.6.2",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2",
+    "webpack-merge": "^6.0.1"
+  },
+  "dependencies": {
+    "css": "^3.0.0",
+    "dev-server": "^0.2.0"
+  }
+}
