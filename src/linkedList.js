@@ -32,12 +32,14 @@ class LinkedList {
     }
 
     at(index) {
-        if (this.head === null) return new Error (`No item at this index, the list is 0 items long.`);
+        if (index < 0) throw new Error (`Index must be non-negative.`);
+
+        if (this.head === null) throw new Error (`List is empty.`);
 
         let tmp = this.head;
 
         for (let i = 0; i < index; i++) {
-            if (tmp.next === null) return new Error (`No item at this index, the list is ${i + 1} items long.`);
+            if (tmp.next === null) throw new Error (`Index ${i} is out of range. list has ${i + 1} items.`);
             tmp = tmp.next;
         }
 
@@ -72,6 +74,19 @@ class LinkedList {
         return index
     }
 
+    toString() {
+        let string = "";
+        let tmp = this.head
+
+        while (tmp !== null) {
+            console.log(tmp.value);
+            string += `( ${tmp.value} ) -> `;
+            tmp = tmp.next;
+        }
+
+        return string + "null"
+    }
+
     prepend(value) {
         this.head = new Node (value, this.head)
     }
@@ -96,16 +111,32 @@ class LinkedList {
         tmp.next = null;
     }
 
-    toString() {
-        let string = "";
-        let tmp = this.head
-
-        while (tmp !== null) {
-            string += `( ${tmp.value} ) -> `;
-            tmp = tmp.next;
+    insertAt(value, index) {
+        if (index <= 0) {
+            this.prepend(value);
+            return
         }
 
-        return string + "null"
+        const prev = this.at(index - 1);
+        const next = prev.next || null;
+
+        prev.next = new Node (value, next);
+    }
+
+    removeAt(index) {
+        if (this.head === null) return
+
+        if (index < 0) throw new Error(`Index must be non-negative.`);
+
+        if (index === 0) {
+            this.head = this.head.next;
+            return
+        }
+
+        const prev = this.at(index - 1);
+        const target = prev.next;
+        if (!target) throw new Error(`Index ${index} out of range.`);
+        prev.next = target.next;
     }
 }
 
